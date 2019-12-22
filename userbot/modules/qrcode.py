@@ -27,7 +27,7 @@ async def parseqr(qr_e):
         await qr_e.get_reply_message())
     # parse the Official ZXing webpage to decode the QRCode
     command_to_exec = [
-        "curl", "-X", "GET", "-F", "f=@" + downloaded_file_name + "",
+        "curl", "-X", "POST", "-F", "f=@" + downloaded_file_name + "",
         "https://zxing.org/w/decode"
     ]
     process = await asyncio.create_subprocess_exec(
