@@ -123,7 +123,7 @@ async def pipcheck(pip):
 async def amireallyalive(alive):
     """ For .alive command, check if the bot is running.  """
     await alive.edit("`"
-                     "XCODE TEAM - Bot Running!\n\n"
+                     "XCODE TEAM - Bot Active!\n\n"
                      f"Version: {version.__version__} \n"
                      f"Python: {python_version()} \n"
                      f"User: {DEFAULTUSER}"
