@@ -20,21 +20,21 @@ from telethon.tl.types import DocumentAttributeSticker
 
 KANGING_STR = [
     "Using Witchery to kang this sticker...",
-    "Plagiarising hehe...",
+    "Still clone hehe...",
     "Inviting this sticker over to my pack...",
     "Kanging this sticker...",
     "Hey that's a nice sticker!\nMind if I kang?!..",
     "hehe me stel ur stikér\nhehe.",
     "Ay look over there (☉｡☉)!→\nWhile I kang this...",
-    "Roses are red violets are blue, kanging this sticker so my pacc looks cool",
+    "Roses are red violets are blue, cloning this sticker so my pacc looks cool",
     "Imprisoning this sticker...",
-    "Mr.Steal Your Sticker is stealing this sticker... ",
+    "Mr. Alliance Your Sticker is stealing this sticker... ",
 ]
 
 
-@register(outgoing=True, pattern="^.kang")
+@register(outgoing=True, pattern="^.pick")
 async def kang(args):
-    """ For .kang command, kangs stickers or creates new ones. """
+    """ For .pick command, kangs stickers or creates new ones. """
     user = await bot.get_me()
     if not user.username:
         user.username = user.first_name
@@ -96,7 +96,7 @@ async def kang(args):
                 emoji = splat[1]
 
         packname = f"a{user.id}_by_{user.username}_{pack}"
-        packnick = f"@{user.username}'s kang pack Vol.{pack}"
+        packnick = f"@{user.username}'s pack Vol.{pack}"
         cmd = '/newpack'
         file = io.BytesIO()
 
@@ -124,7 +124,7 @@ async def kang(args):
                 while "120" in x.text:
                     pack += 1
                     packname = f"a{user.id}_by_{user.username}_{pack}"
-                    packnick = f"@{user.username}'s kang pack Vol.{pack}"
+                    packnick = f"@{user.username}'s pack Vol.{pack}"
                     await args.edit("`Switching to Pack " + str(pack) +
                                     " due to insufficient space`")
                     await conv.send_message(packname)
@@ -311,14 +311,14 @@ async def get_pack_info(event):
 
 CMD_HELP.update({
     "stickers":
-    ".kang\
-\nUsage: Reply .kang to a sticker or an image to kang it to your userbot pack.\
-\n\n.kang [emoji('s)]\
-\nUsage: Works just like .kang but uses the emoji('s) you picked.\
-\n\n.kang [number]\
-\nUsage: Kang's the sticker/image to the specified pack but uses 🤔 as emoji.\
-\n\n.kang [emoji('s)] [number]\
-\nUsage: Kang's the sticker/image to the specified pack and uses the emoji('s) you picked.\
+    ".pick\
+\nUsage: Reply .pick to a sticker or an image to pick it to your userbot pack.\
+\n\n.pick [emoji('s)]\
+\nUsage: Works just like .pick but uses the emoji('s) you picked.\
+\n\n.pick [number]\
+\nUsage: Pick's the sticker/image to the specified pack but uses 🤔 as emoji.\
+\n\n.pick [emoji('s)] [number]\
+\nUsage: Pick's the sticker/image to the specified pack and uses the emoji('s) you picked.\
 \n\n.stkrinfo\
 \nUsage: Gets info about the sticker pack."
 })
