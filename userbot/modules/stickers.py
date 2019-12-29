@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
 #
-""" Userbot module for kanging stickers or making new ones. Thanks @rupansh"""
+""" Userbot module for picked stickers or making new ones. Thanks @rupansh"""
 
 import io
 import math
@@ -19,13 +19,13 @@ from telethon.tl.types import InputStickerSetID
 from telethon.tl.types import DocumentAttributeSticker
 
 KANGING_STR = [
-    "Using Witchery to kang this sticker...",
+    "Using Witchery to pick this sticker...",
     "Still clone hehe...",
     "Inviting this sticker over to my pack...",
-    "Kanging this sticker...",
-    "Hey that's a nice sticker!\nMind if I kang?!..",
+    "Picked this sticker...",
+    "Hey that's a nice sticker!\nMind if I pick?!..",
     "hehe me stel ur stikér\nhehe.",
-    "Ay look over there (☉｡☉)!→\nWhile I kang this...",
+    "Ay look over there (☉｡☉)!→\nWhile I pick this...",
     "Roses are red violets are blue, cloning this sticker so my pacc looks cool",
     "Imprisoning this sticker...",
     "Mr. Alliance Your Sticker is stealing this sticker... ",
@@ -34,7 +34,7 @@ KANGING_STR = [
 
 @register(outgoing=True, pattern="^.pick")
 async def kang(args):
-    """ For .pick command, kangs stickers or creates new ones. """
+    """ For .pick command, bitwise stickers or creates new ones. """
     user = await bot.get_me()
     if not user.username:
         user.username = user.first_name
@@ -74,7 +74,7 @@ async def kang(args):
             await args.edit("`Unsupported File!`")
             return
     else:
-        await args.edit("`I can't kang that...`")
+        await args.edit("`I can't pick that...`")
         return
 
     if photo:
@@ -236,7 +236,7 @@ async def kang(args):
                 # Ensure user doesn't get spamming notifications
                 await bot.send_read_acknowledge(conv.chat_id)
 
-        await args.edit(f"`Sticker kanged successfully!`\
+        await args.edit(f"`Sticker picked successfully!`\
             \nPack can be found [here](t.me/addstickers/{packname})",
                         parse_mode='md')
 
