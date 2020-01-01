@@ -161,7 +161,7 @@ async def moni(event):
             currency_from = input_sgra[1].upper()
             currency_to = input_sgra[2].upper()
             #https://api.exchangeratesapi.io/latest?base={}
-            request_url = "https://api.cryptonator.com/api/ticker/base={}".format(
+            request_url = "https://api.exchangeratesapi.io/latest?base={}".format(
                 currency_from)
             current_response = get(request_url).json()
             if currency_to in current_response["rates"]:
