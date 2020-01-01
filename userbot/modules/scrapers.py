@@ -161,11 +161,13 @@ async def moni(event):
             currency_from = input_sgra[1].upper()
             currency_to = input_sgra[2].upper()
             #https://api.exchangeratesapi.io/latest?base={}
-            request_url = "https://api.exchangeratesapi.io/latest?base={}".format(
+            request_url = "https://api.cryptonator.com/api/ticker/{}".format(
                 currency_from)
             current_response = get(request_url).json()
-            if currency_to in current_response["rates"]:
-                current_rate = float(current_response["rates"][currency_to])
+            #if currency_to in current_response["rates"]:
+            if currency_to in current_response["ticker"]:
+                #current_rate = float(current_response["rates"][currency_to])
+                current_rate = float(current_response["ticker"]["base"][currency_to])
                 rebmun = round(number * current_rate, 2)
                 await event.edit("{} {} = {} {}".format(
                     number, currency_from, rebmun, currency_to))
