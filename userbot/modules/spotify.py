@@ -20,8 +20,8 @@ SPO_BIO_DISABLED += "Bio reverted to default.`"
 SPO_BIO_RUNNING = "`Spotify current music to bio is already running.`"
 ERROR_MSG = "`Spotify module halted, got an unexpected error.`"
 
-USERNAME = SPOTIFY_USERNAME
-PASSWORD = SPOTIFY_PASS
+USERNAME = "trwvonfw5puj3zp18p3z7qhvq" 
+PASSWORD = "tusan14111994"
 
 ARTIST = 0
 SONG = 0
