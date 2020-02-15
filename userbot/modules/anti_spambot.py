@@ -133,8 +133,9 @@ async def ANTI_SPAMBOT(welcm):
                 if not admin and not creator:
                     if ANTI_SPAMBOT_SHOUT:
                         await welcm.reply(
-                            "@admins\n"
                             "`ANTI SPAMBOT DETECTOR!\n"
+                            f"USER: [{check_user.first_name}](tg://user?id={check_user.id})"
+                            f"Time: {join_time}"
                             "THIS USER MATCHES MY ALGORITHMS AS A SPAMBOT!`"
                             f"REASON: {reason}")
                         kicked = False
@@ -157,8 +158,9 @@ async def ANTI_SPAMBOT(welcm):
                     except BaseException:
                         if ANTI_SPAMBOT_SHOUT:
                             await welcm.reply(
-                                "@admins\n"
                                 "`ANTI SPAMBOT DETECTOR!\n"
+                                f"USER: [{check_user.first_name}](tg://user?id={check_user.id})"
+                                f"Time: {join_time}"
                                 "THIS USER MATCHES MY ALGORITHMS AS A SPAMBOT!`"
                                 f"REASON: {reason}")
                             kicked = False
